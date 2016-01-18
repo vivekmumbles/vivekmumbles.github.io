@@ -1,0 +1,84 @@
+---
+layout: main
+---
+
+<div id="header-wrapper">
+  <p>vivek mumbles</p>
+  <h1>&nbsp;- Search Results</h1>
+</div>
+
+<hr>
+<ul id="search-results"></ul>
+<br>
+<br>
+
+<script type="text/javascript">
+
+jQuery(function() {
+	// Initalize lunr with the fields it will be searching on. I've given title
+  	// a boost of 10 to indicate matches on this field are more important.
+  	window.idx = lunr(function () {
+  		this.field('id');
+  		this.field('title', { boost: 10 });
+  		this.field('category');
+  		this.field('date');
+  		this.field('tags');
+  		this.field('description');
+  	});
+
+  	// Download the data from the JSON file we generated
+  	window.data = $.getJSON('/search_data.json');
+
+  	// Wait for the data to load and add it to lunr
+  	window.data.then(function(loaded_data){
+  		$.each(loaded_data, function(index, value){
+  			window.idx.add(
+  				$.extend({ "id": index }, value)
+  				);
+  		});
+  	});
+
+  	function search() {
+  		var query = window.location.href.split('?')[1];
+  		$("#search-box").val(query);
+      	var results = window.idx.search(query); // Get lunr to perform a search
+      	display_search_results(results);
+      }
+
+      $(window).load(search);
+
+      function display_search_results(results) {
+      	var $search_results = $("#search-results");
+
+    	// Wait for data to load
+    	window.data.then(function(loaded_data) {
+
+      	// Are there any results?
+      	if (results.length) {
+        	$search_results.empty(); // Clear any old results
+
+        	// Iterate over the results
+        	results.forEach(function(result) {
+        		var item = loaded_data[result.ref];
+
+        		var tags = '<ul class="tags">';
+
+        		for (var i = 0; i< item.tags.length; ++i) {
+        			tags += '<li><a href="{{ baseurl }}/tags/' + item.tags[i] + '">' + item.tags[i] + '</a></li>';
+        		}
+
+        		tags += '</ul>';
+
+          		// Build a snippet of HTML for this result
+          		var appendString = '<li><h2><a href="' + item.url + '">' + item.title + '</a></h2> <h4>&middot</h4> <h3><a href="{{ baseurl }}/"' + item.category + '">' + item.category + '</a></h3> <h4>&middot</h4> <h4>' + item.date + '</h4>' + tags + '<br><p>' + item.description + '</p></li><hr>';
+
+          		// Add it to the results
+          		$search_results.append(appendString);
+          	});
+        } else {
+        	$search_results.html('<li>No results found</li>');
+        } });
+    }
+});
+
+</script>

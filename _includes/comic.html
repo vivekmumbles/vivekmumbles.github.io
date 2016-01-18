@@ -1,0 +1,25 @@
+
+<script type="text/javascript">
+
+$.ajax({
+	url: "http://dynamic.xkcd.com/api-0/jsonp/comic?callback=?",
+	dataType: "json",
+	success: function(data) {
+		var img = document.createElement('img');
+		img.src = data.img;
+		var parent = document.getElementById('xkcd-comic');
+		parent.appendChild(img);
+		img.onload = function() {
+			var comicWidth = img.width;
+			img.width = Math.min(comicWidth, parent.clientWidth);
+
+			window.addEventListener('resize', function(e) {
+				img.width = Math.min(comicWidth, parent.clientWidth);
+			});
+
+		};
+
+	}
+});
+
+</script>

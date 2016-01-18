@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{% if page.title != null %}{{ page.title }} &middot {{ page.category | capitalize}} &middot {% endif %}vivekmumbles</title>
+
+	<meta property="og:title" content="{{ page.title }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{ baseurl }}{{ page.url }}" />
+	<meta property="og:image" content="{{ page.thumbnail }}" />
+
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.12/d3.js"></script>
+
+	<script type="text/javascript" src="{{ baseurl }}/assets/js/lunr.js"></script>
+
+	<script type="text/javascript" src="{{ baseurl }}/assets/js/banner.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="{{ baseurl }}/assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{{ baseurl }}/assets/css/custom.css">
+
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div id="bg"><canvas id="bg-canvas">use a better web browser.</canvas></div>
+	<div id="fg">
+		<div id="banner">
+			<canvas id="banner-canvas">your browser doesn't support HTML5 canvas.</canvas>
+		</div>
+		<nav id="navbar" class="navbar navbar-default">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a id="logo" class="navbar-brand" href="{{ baseurl }}/"></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="navbar-collapse" style="margin-left: calc(8% + 234px);">
+				<ul class="nav navbar-nav">
+					<li {% if page.url == "/" %} class="active" {% endif %}><a href="{{ baseurl }}/">Home</a></li>
+					<li {% if page.url == "/about" %} class="active" {% endif %}><a href="{{ baseurl }}/about">About</a></li>
+					<li {% if page.url contains "/blog/" %} class="active" {% endif %}><a href="{{ baseurl }}/blog">Blog</a></li>
+					<li {% if page.url contains "/tutorials/" %} class="active" {% endif %}><a href="{{ baseurl }}/tutorials">Tutorials</a></li>
+					<li {% if page.url contains "/projects/" %} class="active" {% endif %}><a href="{{ baseurl }}/projects">Projects</a></li>
+					<li {% if page.url == "/contact" %} class="active" {% endif %}><a href="{{ baseurl }}/contact">Contact</a></li>
+				</ul>
+				<form id="search-form" class="navbar-form navbar-right" role="search">
+					<input id="search-box" type="text" class="form-control input-sm" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+		<div id="content">
+			{{ content }}
+		</div>
+
+		<footer>
+			<div class="col-xs-4" style="margin-top:10px;">
+				<a href="{{ baseurl }}/">
+					<img id="footer-logo" src="{{ baseurl }}/assets/imgs/vivekmumbles-logo-gold.png" style="vertical-align:top;">
+				</a>
+				<div id="footer-logo-txt-grp" style="display:inline-block; margin-top:1em;">
+					<a id="footer-logo-text" href="{{ baseurl }}">vivek mumbles</a><br>
+					<i style="color:white;">A simple blog.</i>
+				</div>
+			</a>
+		</div>
+		<div class="col-xs-4">
+			<div id="xkcd-comic">
+				<!-- <img src="imgs/real_programmers_blue.png"> -->
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div id="follow-bar">
+				<h3 style="color:white;">Follow me on:</h3>
+				<ul>
+					<li><a href=""><img src="{{ baseurl }}/assets/imgs/youtube-logo.svg"></a></li>
+					<li><a href=""><img src="{{ baseurl }}/assets/imgs/twitter-logo.svg"></a></li>
+					<li><a href=""><img src="{{ baseurl }}/assets/imgs/soundcloud-logo.svg"></a></li>
+				</ul>
+			</div>
+		</div>
+
+	</footer>
+</div>
+
+<style>#bg-canvas { mask: url(#mask); }</style>
+<svg style="position: absolute;">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2 ="100%" y2="0%">
+      <stop stop-color="white" offset="0%"/>
+      <stop stop-color="black" offset="20%"/>
+      <stop stop-color="black" offset="80%"/>
+      <stop stop-color="white" offset="100%"/>
+    </linearGradient>
+
+    <mask id="mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+      <rect width="1" height="1" fill="url(#gradient)" />
+    </mask>
+  </defs>
+</svg>
+
+{% include search_redirect.html %}
+
+{% include comic.html %}
+
+{% include fixfooter.html %}
+
+<script type="text/javascript" src="{{ baseurl }}/assets/js/bg.js"></script>
+
+<script id="dsq-count-scr" src="//vivekmumbles.disqus.com/count.js" async></script>
+
+</body>
+</html>

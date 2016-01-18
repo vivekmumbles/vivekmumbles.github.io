@@ -1,0 +1,14 @@
+<svg style="position: absolute;">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop stop-color="white" offset="0%"/>
+      <stop stop-color="black" offset="20%"/>
+      <stop stop-color="black" offset="80%"/>
+      <stop stop-color="white" offset="100%"/>
+    </linearGradient>
+
+    <mask id="bg-mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+      <rect width="1" height="1" fill="url(#gradient)" />
+    </mask>
+  </defs>
+</svg>

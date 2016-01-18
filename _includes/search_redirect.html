@@ -1,0 +1,12 @@
+
+<script type="text/javascript">
+
+$(window).load(function() {
+	$("#search-form").submit(function() {
+		event.preventDefault();
+		var query = $("#search-box").val();
+		window.location = '/search?'+query;
+	});
+});
+
+</script>

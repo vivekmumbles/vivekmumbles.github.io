@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>vivekmumbles</title>
+
+	<meta property="og:title" content="" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="/tags/fun/" />
+	<meta property="og:image" content="" />
+
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.12/d3.js"></script>
+
+	<script type="text/javascript" src="/assets/js/lunr.js"></script>
+
+	<script type="text/javascript" src="/assets/js/banner.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div id="bg"><canvas id="bg-canvas">use a better web browser.</canvas></div>
+	<div id="fg">
+		<div id="banner">
+			<canvas id="banner-canvas">your browser doesn't support HTML5 canvas.</canvas>
+		</div>
+		<nav id="navbar" class="navbar navbar-default">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a id="logo" class="navbar-brand" href="/"></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="navbar-collapse" style="margin-left: calc(8% + 234px);">
+				<ul class="nav navbar-nav">
+					<li ><a href="/">Home</a></li>
+					<li ><a href="/about">About</a></li>
+					<li ><a href="/blog">Blog</a></li>
+					<li ><a href="/tutorials">Tutorials</a></li>
+					<li ><a href="/projects">Projects</a></li>
+					<li ><a href="/contact">Contact</a></li>
+				</ul>
+				<form id="search-form" class="navbar-form navbar-right" role="search">
+					<input id="search-box" type="text" class="form-control input-sm" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+		<div id="content">
+			<div id="header-wrapper">
+  <p>vivek mumbles</p>
+  <h1>&nbsp;- #fun</h1>
+</div>
+
+
+<hr>
+
+
+<div class="post">
+  <div class="post-img">
+    <a href="/blog/blog-post-three"></a>
+  </div>
+  <div class="post-body">
+    <h2><a href="/blog/blog-post-three">Blog Post Three</a></h2><br>
+    <div class="post-body-info">
+      <p><a href="/blog">Blog</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp; 03 January 2016&nbsp;&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <ul class="tags">
+        
+        <li>
+          <a href="/tags/snowboarding">snowboarding</a>
+        </li>
+        
+        <li>
+          <a href="/tags/winter">winter</a>
+        </li>
+        
+        <li>
+          <a href="/tags/fun">fun</a>
+        </li>
+        
+      </ul>
+    </div>
+    <p class="post-body-description">This blog post is about my 2016 snowboarding trip to Santa Fe. This blog post is about my 2016 snowboarding trip to Santa Fe. This blog post is about my 2016 snowboarding trip to Santa Fe. This blog post is about my 2016 snowboarding trip to Santa Fe.</p>
+  </div>
+</div>
+<hr>
+
+
+<div>
+  <ul class="pager">
+    
+    
+  </ul>
+</div>
+
+<script type="text/javascript">
+
+function infobar(e) {
+
+    var posts = document.getElementsByClassName('post');
+    var pimg = document.getElementsByClassName('post-img');
+    var pbody = document.getElementsByClassName('post-body');
+    var info = document.getElementsByClassName('post-body-info');
+
+    for (var i = 0; i < posts.length; ++i) {
+
+        info[i].style.marginLeft = null;
+        info[i].style.paddingLeft = null;
+        info[i].style.marginRight = null;
+        info[i].style.width = null;
+
+        pbr = posts[i].getBoundingClientRect();
+        var ibr = info[i].getBoundingClientRect();
+
+        var h2 = pbody[i].children[0];
+
+        var el = pbody[i].children[3];
+
+        var mw = Math.max(h2.getBoundingClientRect().width, ibr.width);
+
+        console.log(pimg[i].getBoundingClientRect().width)
+
+        if (el.tagName === 'P') {
+
+            if (mw < pbr.width-240) {
+
+                el.style.width = (pbr.width - 260) + 'px';
+                pbody[i].style.marginLeft = 20+'px';
+
+                if (pimg[i].getBoundingClientRect().width === 0) {
+                    el.style.width = null;
+                    pbody[i].style.marginLeft = 0+'px';
+                }
+
+            }
+            else {
+
+                el.style.width = (pbr.width - 40) + 'px';
+                pbody[i].style.marginLeft = 0+'px';
+            }
+        }
+
+        pbr = posts[i].getBoundingClientRect();
+        ibr = info[i].getBoundingClientRect();
+
+        var marginLeft = ibr.left - pbr.left;
+        var marginRight = pbr.right - ibr.right;
+
+        info[i].style.marginLeft = -marginLeft+'px';
+        info[i].style.paddingLeft = marginLeft+'px';
+        info[i].style.marginRight = -marginRight+'px';
+        info[i].style.width = pbr.width+'px';
+
+        // info[i].style.width = window.innerWidth*.6-9+'px';
+
+        // console.log(document.getElementsByClassName('post')[0].clientWidth)
+        // console.log(window.innerWidth*.6-9)
+    }
+}
+
+window.addEventListener('resize', infobar);
+window.addEventListener('load', infobar);
+
+</script>
+		</div>
+
+		<footer>
+			<div class="col-xs-4" style="margin-top:10px;">
+				<a href="/">
+					<img id="footer-logo" src="/assets/imgs/vivekmumbles-logo-gold.png" style="vertical-align:top;">
+				</a>
+				<div id="footer-logo-txt-grp" style="display:inline-block; margin-top:1em;">
+					<a id="footer-logo-text" href="">vivek mumbles</a><br>
+					<i style="color:white;">A simple blog.</i>
+				</div>
+			</a>
+		</div>
+		<div class="col-xs-4">
+			<div id="xkcd-comic">
+				<!-- <img src="imgs/real_programmers_blue.png"> -->
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div id="follow-bar">
+				<h3 style="color:white;">Follow me on:</h3>
+				<ul>
+					<li><a href=""><img src="/assets/imgs/youtube-logo.svg"></a></li>
+					<li><a href=""><img src="/assets/imgs/twitter-logo.svg"></a></li>
+					<li><a href=""><img src="/assets/imgs/soundcloud-logo.svg"></a></li>
+				</ul>
+			</div>
+		</div>
+
+	</footer>
+</div>
+
+<style>#bg-canvas { mask: url(#mask); }</style>
+<svg style="position: absolute;">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2 ="100%" y2="0%">
+      <stop stop-color="white" offset="0%"/>
+      <stop stop-color="black" offset="20%"/>
+      <stop stop-color="black" offset="80%"/>
+      <stop stop-color="white" offset="100%"/>
+    </linearGradient>
+
+    <mask id="mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+      <rect width="1" height="1" fill="url(#gradient)" />
+    </mask>
+  </defs>
+</svg>
+
+
+<script type="text/javascript">
+
+$(window).load(function() {
+	$("#search-form").submit(function() {
+		event.preventDefault();
+		var query = $("#search-box").val();
+		window.location = '/search?'+query;
+	});
+});
+
+</script>
+
+
+<script type="text/javascript">
+
+$.ajax({
+	url: "http://dynamic.xkcd.com/api-0/jsonp/comic?callback=?",
+	dataType: "json",
+	success: function(data) {
+		var img = document.createElement('img');
+		img.src = data.img;
+		var parent = document.getElementById('xkcd-comic');
+		parent.appendChild(img);
+		img.onload = function() {
+			var comicWidth = img.width;
+			img.width = Math.min(comicWidth, parent.clientWidth);
+
+			window.addEventListener('resize', function(e) {
+				img.width = Math.min(comicWidth, parent.clientWidth);
+			});
+
+		};
+
+	}
+});
+
+</script>
+
+
+<script type="text/javascript">
+
+function fixfooter() {
+	var footer = document.getElementsByTagName('footer')[0];
+	var br = footer.getBoundingClientRect();
+	if (window.innerHeight - br.bottom > 1) {
+		footer.style.marginTop = window.innerHeight-br.bottom+'px';
+	}
+}
+
+window.addEventListener('resize', fixfooter);
+window.addEventListener('load', fixfooter);
+
+</script>
+
+<script type="text/javascript" src="/assets/js/bg.js"></script>
+
+<script id="dsq-count-scr" src="//vivekmumbles.disqus.com/count.js" async></script>
+
+</body>
+</html>

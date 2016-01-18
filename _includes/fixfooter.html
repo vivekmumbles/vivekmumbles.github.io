@@ -1,0 +1,15 @@
+
+<script type="text/javascript">
+
+function fixfooter() {
+	var footer = document.getElementsByTagName('footer')[0];
+	var br = footer.getBoundingClientRect();
+	if (window.innerHeight - br.bottom > 1) {
+		footer.style.marginTop = window.innerHeight-br.bottom+'px';
+	}
+}
+
+window.addEventListener('resize', fixfooter);
+window.addEventListener('load', fixfooter);
+
+</script>
