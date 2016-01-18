@@ -3,7 +3,7 @@ layout: posts
 title: Setting Up RVM
 category: tutorial
 tags: [ruby]
-description: "This blog post is about my 2016 snowboarding trip to Santa Fe. This blog post is about my 2016 snowboarding trip to Santa Fe. This blog post is about my 2016 snowboarding trip to Santa Fe. This blog post is about my 2016 snowboarding trip to Santa Fe."
+description: "This blog post is about my 2016 snowboarding trip to Santa Fe. This blog post is about my 2016 snowboarding trip to Santa Fe. This blog post is about my 2016 snowboarding trip to Santa Fe. This blog post is about my 2016 snowboarding trip to Santa Fe..."
 ---
 
 # {{ page.title }}

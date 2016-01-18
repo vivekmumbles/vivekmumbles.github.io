@@ -11,7 +11,7 @@ body {
 }
 
 #bg {
-	
+
 }
 
 #bg-canvas {
@@ -235,7 +235,7 @@ h1 {
 }
 
 .tags li:hover {
-	background-color: #FF8200;
+	/*background-color: #FF8200;*/
 	background-color: #217DBB;
 }
 
@@ -263,7 +263,7 @@ h1 {
 }
 
 .tags li:hover:before {
-	border-right-color: #FF8200;
+	/*border-right-color: #FF8200;*/
 	border-right-color: #217DBB;
 }
 
@@ -324,6 +324,19 @@ h1 {
 		margin-top: 9px;
 		margin-right: 4px;
 		}*/
+
+.read-more {
+	float: right;
+}
+
+.read-more > a {
+	color: dodgerblue;
+}
+
+.read-more > a:hover {
+	color: #2C3E50;
+	text-decoration: underline;
+}
 
 		footer {
 			background-color: #2C3E50;
