@@ -231,7 +231,8 @@ h1 {
 	padding: 2px 8px;
 	border-radius: 4px;
 	position: relative;
-	height: 24px
+	height: 24px;
+	margin: 2px 8px;
 }
 
 .tags li:hover {
