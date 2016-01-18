@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Blog Post Three &middot Blog &middot vivekmumbles</title>
+
+	<meta property="og:title" content="Blog Post Three" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="/blog/blog-post-three" />
+	<meta property="og:image" content="" />
+
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.12/d3.js"></script>
+
+	<script type="text/javascript" src="/assets/js/lunr.js"></script>
+
+	<script type="text/javascript" src="/assets/js/banner.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div id="bg"><canvas id="bg-canvas">use a better web browser.</canvas></div>
+	<div id="fg">
+		<div id="banner">
+			<canvas id="banner-canvas">your browser doesn't support HTML5 canvas.</canvas>
+		</div>
+		<nav id="navbar" class="navbar navbar-default">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a id="logo" class="navbar-brand" href="/"></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="navbar-collapse" style="margin-left: calc(8% + 234px);">
+				<ul class="nav navbar-nav">
+					<li ><a href="/">Home</a></li>
+					<li ><a href="/about">About</a></li>
+					<li  class="active" ><a href="/blog">Blog</a></li>
+					<li ><a href="/tutorials">Tutorials</a></li>
+					<li ><a href="/projects">Projects</a></li>
+					<li ><a href="/contact">Contact</a></li>
+				</ul>
+				<form id="search-form" class="navbar-form navbar-right" role="search">
+					<input id="search-box" type="text" class="form-control input-sm" placeholder="Search">
+				</form>
+			</div>
+		</nav>
+
+		<div id="content">
+			<h1 id="blog-post-three">Blog Post Three</h1>
+
+<h2 id="intro">Intro</h2>
+
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<h2 id="body">Body</h2>
+
+<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+
+<br>
+<br>
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+
+var disqus_config = function () {
+	// this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+	// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+
+	this.callbacks.onReady.push(function() {
+		renderbg(document.body.scrollHeight);
+	});
+
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+
+	s.src = '//vivekmumbles.disqus.com/embed.js';
+
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+		</div>
+
+		<footer>
+			<div class="col-xs-4" style="margin-top:10px;">
+				<a href="/">
+					<img id="footer-logo" src="/assets/imgs/vivekmumbles-logo-gold.png" style="vertical-align:top;">
+				</a>
+				<div id="footer-logo-txt-grp" style="display:inline-block; margin-top:1em;">
+					<a id="footer-logo-text" href="">vivek mumbles</a><br>
+					<i style="color:white;">A simple blog.</i>
+				</div>
+			</a>
+		</div>
+		<div class="col-xs-4">
+			<div id="xkcd-comic">
+				<!-- <img src="imgs/real_programmers_blue.png"> -->
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div id="follow-bar">
+				<h3 style="color:white;">Follow me on:</h3>
+				<ul>
+					<li><a href=""><img src="/assets/imgs/youtube-logo.svg"></a></li>
+					<li><a href=""><img src="/assets/imgs/twitter-logo.svg"></a></li>
+					<li><a href=""><img src="/assets/imgs/soundcloud-logo.svg"></a></li>
+				</ul>
+			</div>
+		</div>
+
+	</footer>
+</div>
+
+<style>#bg-canvas { mask: url(#mask); }</style>
+<svg style="position: absolute;">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2 ="100%" y2="0%">
+      <stop stop-color="white" offset="0%"/>
+      <stop stop-color="black" offset="20%"/>
+      <stop stop-color="black" offset="80%"/>
+      <stop stop-color="white" offset="100%"/>
+    </linearGradient>
+
+    <mask id="mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+      <rect width="1" height="1" fill="url(#gradient)" />
+    </mask>
+  </defs>
+</svg>
+
+
+<script type="text/javascript">
+
+$(window).load(function() {
+	$("#search-form").submit(function() {
+		event.preventDefault();
+		var query = $("#search-box").val();
+		window.location = '/search?'+query;
+	});
+});
+
+</script>
+
+
+<script type="text/javascript">
+
+$.ajax({
+	url: "http://dynamic.xkcd.com/api-0/jsonp/comic?callback=?",
+	dataType: "json",
+	success: function(data) {
+		var img = document.createElement('img');
+		img.src = data.img;
+		var parent = document.getElementById('xkcd-comic');
+		parent.appendChild(img);
+		img.onload = function() {
+			var comicWidth = img.width;
+			img.width = Math.min(comicWidth, parent.clientWidth);
+
+			window.addEventListener('resize', function(e) {
+				img.width = Math.min(comicWidth, parent.clientWidth);
+			});
+
+		};
+
+	}
+});
+
+</script>
+
+
+<script type="text/javascript">
+
+function fixfooter() {
+	var footer = document.getElementsByTagName('footer')[0];
+	var br = footer.getBoundingClientRect();
+	if (window.innerHeight - br.bottom > 1) {
+		footer.style.marginTop = window.innerHeight-br.bottom+'px';
+	}
+}
+
+window.addEventListener('resize', fixfooter);
+window.addEventListener('load', fixfooter);
+
+</script>
+
+<script type="text/javascript" src="/assets/js/bg.js"></script>
+
+<script id="dsq-count-scr" src="//vivekmumbles.disqus.com/count.js" async></script>
+
+</body>
+</html>
