@@ -1,17 +1,17 @@
 
-function renderbg(h) {
+function renderbg() {
+
+	var fg = document.getElementById('fg');
+	var footer = document.getElementsByTagName('footer')[0];
 	
-	var width = window.innerWidth; // screen.width;
-	var height = h; //screen.height;
+	var width = window.innerWidth;
+	var height = fg.clientHeight + footer.clientHeight;
 	
 	var canvas = document.getElementById('bg-canvas');
 	canvas.width = width;
 	canvas.height = height;
 
-	// canvas.style.width = window.innerWidth + 'px';
-	// canvas.parentNode.style.height = height+'px';
-
-	canvas.style.height = height+'px';
+	// canvas.style.height = height+'px';
 	
 	var ctx = canvas.getContext('2d');
 
@@ -79,9 +79,8 @@ function renderbg(h) {
 		}
 	}
 
-	// fixfooter();
 }
 
-window.addEventListener('resize', function() { renderbg(Math.max(window.innerHeight, document.body.scrollHeight)); });
-window.addEventListener('load', function() { renderbg(Math.max(window.innerHeight, document.body.scrollHeight)); });
+window.addEventListener('resize', renderbg);
+window.addEventListener('load', renderbg);
 

@@ -246,7 +246,7 @@ var MorphingCurve = function(context, displayWidth, displayHeight) {
 
 }
 
-window.onload = function() {
+function initbanner() {
 	var canvas = document.getElementById('banner-canvas');
 	canvas.width = screen.width;
 	canvas.height = 128;
@@ -254,3 +254,5 @@ window.onload = function() {
 	mc = new MorphingCurve(context, canvas.width, canvas.height);
 	mc.init();
 }
+
+initbanner();

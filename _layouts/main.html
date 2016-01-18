@@ -15,9 +15,6 @@
 
 	<script type="text/javascript" src="{{ baseurl }}/assets/js/lunr.js"></script>
 
-	<script type="text/javascript" src="{{ baseurl }}/assets/js/banner.js"></script>
-
-
 	<link rel="stylesheet" type="text/css" href="{{ baseurl }}/assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="{{ baseurl }}/assets/css/custom.css">
 
@@ -60,58 +57,58 @@
 		<div id="content">
 			{{ content }}
 		</div>
+	</div>
 
-		<footer>
-			<div class="col-xs-4" style="margin-top:10px;">
-				<a href="{{ baseurl }}/">
-					<img id="footer-logo" src="{{ baseurl }}/assets/imgs/vivekmumbles-logo-gold.png" style="vertical-align:top;">
-				</a>
-				<div id="footer-logo-txt-grp" style="display:inline-block; margin-top:1em;">
-					<a id="footer-logo-text" href="{{ baseurl }}">vivek mumbles</a><br>
-					<i style="color:white;">A simple blog.</i>
-				</div>
+	<footer>
+		<div class="col-xs-4" style="margin-top:10px;">
+			<a href="{{ baseurl }}/">
+				<img id="footer-logo" src="{{ baseurl }}/assets/imgs/vivekmumbles-logo-gold.png" style="vertical-align:top;">
 			</a>
-		</div>
-		<div class="col-xs-4">
-			<div id="xkcd-comic">
-				<!-- <img src="imgs/real_programmers_blue.png"> -->
+			<div id="footer-logo-txt-grp" style="display:inline-block; margin-top:1em;">
+				<a id="footer-logo-text" href="{{ baseurl }}">vivek mumbles</a><br>
+				<i style="color:white;">A simple blog.</i>
 			</div>
+		</a>
+	</div>
+	<div class="col-xs-4">
+		<div id="xkcd-comic">
+			<!-- <img src="imgs/real_programmers_blue.png"> -->
 		</div>
-		<div class="col-xs-4">
-			<div id="follow-bar">
-				<h3 style="color:white;">Follow me on:</h3>
-				<ul>
-					<li><a href=""><img src="{{ baseurl }}/assets/imgs/youtube-logo.svg"></a></li>
-					<li><a href=""><img src="{{ baseurl }}/assets/imgs/twitter-logo.svg"></a></li>
-					<li><a href=""><img src="{{ baseurl }}/assets/imgs/soundcloud-logo.svg"></a></li>
-				</ul>
-			</div>
+	</div>
+	<div class="col-xs-4">
+		<div id="follow-bar">
+			<h3 style="color:white;">Follow me on:</h3>
+			<ul>
+				<li><a href=""><img src="{{ baseurl }}/assets/imgs/youtube-logo.svg"></a></li>
+				<li><a href=""><img src="{{ baseurl }}/assets/imgs/twitter-logo.svg"></a></li>
+				<li><a href=""><img src="{{ baseurl }}/assets/imgs/soundcloud-logo.svg"></a></li>
+			</ul>
 		</div>
+	</div>
 
-	</footer>
-</div>
+</footer>
 
 <style>#bg-canvas { mask: url(#mask); }</style>
-<svg style="position: absolute;">
-  <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2 ="100%" y2="0%">
-      <stop stop-color="white" offset="0%"/>
-      <stop stop-color="black" offset="20%"/>
-      <stop stop-color="black" offset="80%"/>
-      <stop stop-color="white" offset="100%"/>
-    </linearGradient>
+<svg style="position: absolute; height: 0px;">
+	<defs>
+		<linearGradient id="gradient" x1="0%" y1="0%" x2 ="100%" y2="0%">
+			<stop stop-color="white" offset="0%"/>
+			<stop stop-color="black" offset="20%"/>
+			<stop stop-color="black" offset="80%"/>
+			<stop stop-color="white" offset="100%"/>
+		</linearGradient>
 
-    <mask id="mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
-      <rect width="1" height="1" fill="url(#gradient)" />
-    </mask>
-  </defs>
+		<mask id="mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+			<rect width="1" height="1" fill="url(#gradient)" />
+		</mask>
+	</defs>
 </svg>
 
 {% include search_redirect.html %}
 
 {% include comic.html %}
 
-{% include fixfooter.html %}
+<script type="text/javascript" src="{{ baseurl }}/assets/js/banner.js"></script>
 
 <script type="text/javascript" src="{{ baseurl }}/assets/js/bg.js"></script>
 
