@@ -127,8 +127,6 @@ function infobar(e) {
 
         var mw = Math.max(h2.getBoundingClientRect().width, ibr.width);
 
-        console.log(pimg[i].getBoundingClientRect().width)
-
         if (el.tagName === 'P') {
 
             if (mw < pbr.width-240) {
@@ -160,10 +158,6 @@ function infobar(e) {
         info[i].style.marginRight = -marginRight+'px';
         info[i].style.width = pbr.width+'px';
 
-        // info[i].style.width = window.innerWidth*.6-9+'px';
-
-        // console.log(document.getElementsByClassName('post')[0].clientWidth)
-        // console.log(window.innerWidth*.6-9)
     }
 }
 
