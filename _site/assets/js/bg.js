@@ -20,6 +20,7 @@ function renderbg() {
 
 
 	var COLORS = d3.interpolateHcl('#21313E', '#EFEE69');
+	// var COLORS = d3.interpolateHcl('#63848B', '#D5ECB8');
 	var PT_RAD = 2;
 
 	var voronoi = d3.geom.voronoi();
